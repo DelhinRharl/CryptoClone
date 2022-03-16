@@ -10,6 +10,7 @@ const Cryptocurrencies = () => {
     <div> <h5>Cryptocurrencies</h5>
      <div className="card">
         <div></div>
+        <div></div>
       </div>
     </div>
   )
