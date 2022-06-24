@@ -8,8 +8,8 @@ const globalStats =data?.data?.stats;
     console.log(data);
     if(isFetching) return  'Loading...'
   return (
-    <div>
-     <div>Homepage</div> 
+    <div className="relative left-40 w-full">
+     <div  className="bg-green-400" >Homepage</div> 
      <div>Total Cryptocurrencies {globalStats.total} </div>
      <div>Total Exchanges {globalStats.totalExchanges} </div>
      <div>Total Market Cap {globalStats.totalMarketCap} </div>
