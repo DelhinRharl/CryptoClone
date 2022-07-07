@@ -1,8 +1,6 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Homepage from './components/Homepage';
-import Sidebar from './components/Sidebar';
-
 
 function App() {
     return (

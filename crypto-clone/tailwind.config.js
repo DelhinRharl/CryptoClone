@@ -4,7 +4,10 @@ module.exports = {
   ],
   important : "#root",
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'backi': "url('./assets/images/background.jpg')",
+    },
   },
   variants: {
     width: ["responsive", "hover", "focus", "active"],
@@ -12,4 +15,5 @@ module.exports = {
   },
 
   plugins: [],
+}
 }
