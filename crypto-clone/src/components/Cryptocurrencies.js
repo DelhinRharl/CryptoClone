@@ -9,20 +9,16 @@ const Cryptocurrencies = () => {
     console.log(cryptos);
   return (
     <div>
-        <div>
-            <h3>Top Ten CryptoCurrencies in the World</h3>
-        </div>
 
         <div className="flex flex-wrap gap-4">
             {isFetching? 'Loading...' :
             cryptos.map(crypto => (
-                <Card key={crypto.id} className="w-full md:w-2/12 lg:w-3/12 ">
+                <Card key={crypto.id} className="md:w-2/12 lg:w-2/12 bg-white shadow-md shadow-slate-300 hover:bg-slate-100  ">
                     <CardContent>
                         <Typography variant="h5" component="h2">
                             {crypto.name}
                         </Typography>
-                         <CardMedia component="img" height="4" image={crypto.iconUrl} alt={crypto.name } 
-      />
+                         <CardMedia  image={crypto.iconUrl} alt={crypto.name } className="w-6 h-6 flex" />
                         <Typography variant="body2" component="p">
                             {crypto.symbol}
                         </Typography>
