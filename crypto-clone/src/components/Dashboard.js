@@ -1,22 +1,26 @@
 import React from 'react'
-import HomeIcon from '@mui/icons-material/Home';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
+import ArticleIcon from '@mui/icons-material/Article';
 
 const Dashboard = () => {
   return (
-    <div className="w-1/4  bg-indigo-700 relative">
-        <aside className="w-1/6 h-full  fixed left-0 top-0">
+    <div className="w-1/4 text-gray-200  ">
+        <aside className="w-1/6 h-full bg-black fixed left-0 top-0 rounded-tr-3xl  flex flex-col gap-8 items-center  p-2 text-lg ">
+            <div className="w-full divide-y-[1px] divide-slate-700 pl-6 flex flex-col gap-8 ">
         <div>
-            <img src="i.png" alt="img" />
-            <h1>Cryptowatch</h1>
+            <h1> Cryptyn</h1>
+
         </div>
         <div>
-            <p>Home</p>
+            <p className="flex items-center gap-4">  <DashboardIcon className="text-indigo-700"/>Home</p>
         </div>
         <div>
-            <p>Cryptos</p>
+            <p className="flex items-center gap-4">  <CurrencyBitcoinIcon className="text-indigo-700"/>Cryptos</p>
         </div>
         <div>
-            <p>News</p>
+            <p className="flex items-center gap-4">  <ArticleIcon className="text-indigo-700"/>News</p>
+        </div>
         </div>
         </aside>
     </div>
