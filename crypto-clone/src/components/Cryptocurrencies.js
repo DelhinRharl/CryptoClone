@@ -3,12 +3,13 @@ import { useStore } from 'react-redux';
 import { useGetCryptosQuery } from '../services/cryptoApi'
 import { Card ,CardContent,Link, CardMedia, Typography } from '@mui/material';
 
-const Cryptocurrencies = () => {
-    const {data:cryptoList, isFetching}= useGetCryptosQuery();
+const Cryptocurrencies = ({simplified}) => {
+    const count = simplified? 10: 100;
+    const {data:cryptoList, isFetching}= useGetCryptosQuery(count);
     const [cryptos,setCryptos] = useState(cryptoList?.data?.coins);
     console.log(cryptos);
   return (
-    <div>
+    <div className="flex-1">
 
         <div className="flex flex-wrap gap-4">
             {isFetching? 'Loading...' :
