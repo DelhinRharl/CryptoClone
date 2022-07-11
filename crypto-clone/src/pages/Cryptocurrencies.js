@@ -14,7 +14,7 @@ const Cryptocurrencies = ({simplified}) => {
         <div className="flex flex-wrap gap-4">
             {isFetching? 'Loading...' :
             cryptos.map(crypto => (
-                <Card key={crypto.id} className="md:w-2/12 lg:w-2/12 bg-white shadow-md shadow-slate-300 hover:bg-slate-100  ">
+                <Card key={crypto.id} className="md:w-2/12 lg:w-2/12 bg-white shadow-md shadow-slate-300 hover:bg-slate-100 hover:shadow-lg hover:shadow-slate-800  ">
                     <CardContent>
                         <Typography variant="h5" component="h2">
                             {crypto.name}

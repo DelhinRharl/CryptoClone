@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
-import Cryptocurrencies from './components/Cryptocurrencies';
+import Cryptocurrencies from './pages/Cryptocurrencies';
 import Dashboard from './components/Dashboard';
-import Homepage from './components/Homepage';
+import Homepage from './pages/Homepage';
 
 function App() {
     return (
