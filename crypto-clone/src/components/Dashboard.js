@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
-    <div className="w-1/4 text-gray-200  ">
+    <div className="w-1/6 text-gray-200  ">
         <aside className="w-1/6 h-full bg-black fixed left-0 top-0 rounded-tr-3xl  flex flex-col gap-8 items-center  p-2 text-lg ">
             <div className="w-full divide-y-[1px] divide-slate-700 pl-6 flex flex-col gap-8 text-2xl ">
       <Link to="/">
