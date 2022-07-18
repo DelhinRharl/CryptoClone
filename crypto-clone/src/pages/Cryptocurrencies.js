@@ -8,12 +8,13 @@ const Cryptocurrencies = ({simplified}) => {
     const {data:cryptoList, isFetching}= useGetCryptosQuery(count);
     const [cryptos,setCryptos] = useState(cryptoList?.data?.coins);
     console.log(cryptos);
-  return (
-    <div className="flex-1">
+
+    if (isFetching) return 'Loading...';
+    return (
+    <div className="flex-1 p-2">
 
         <div className="flex flex-wrap gap-4">
-            {isFetching? 'Loading...' :
-            cryptos.map(crypto => (
+            {cryptos?.map(crypto => (
                 <Card key={crypto.id} className="md:w-2/12 lg:w-2/12 bg-white shadow-md shadow-slate-300 hover:bg-slate-100 hover:shadow-lg hover:shadow-slate-800  ">
                     <CardContent>
                         <Typography variant="h5" component="h2">
