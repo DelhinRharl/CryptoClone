@@ -3,26 +3,24 @@ import { useStore } from 'react-redux';
 import { useGetCryptosQuery } from '../services/cryptoApi'
 import { Card ,CardContent,Link, CardMedia, Typography } from '@mui/material';
 
-const Cryptocurrencies = () => {
-    const {data:cryptoList, isFetching}= useGetCryptosQuery();
+const Cryptocurrencies = ({simplified}) => {
+    const count = simplified? 10: 100;
+    const {data:cryptoList, isFetching}= useGetCryptosQuery(count);
     const [cryptos,setCryptos] = useState(cryptoList?.data?.coins);
     console.log(cryptos);
-  return (
-    <div>
-        <div>
-            <h3>Top Ten CryptoCurrencies in the World</h3>
-        </div>
+
+    if (isFetching) return 'Loading...';
+    return (
+    <div className="flex-1 p-2">
 
         <div className="flex flex-wrap gap-4">
-            {isFetching? 'Loading...' :
-            cryptos.map(crypto => (
-                <Card key={crypto.id} className="w-full md:w-2/12 lg:w-3/12 ">
+            {cryptos?.map(crypto => (
+                <Card key={crypto.id} className="md:w-2/12 lg:w-2/12 bg-white shadow-md shadow-slate-300 hover:bg-slate-100 hover:shadow-lg hover:shadow-slate-800  ">
                     <CardContent>
                         <Typography variant="h5" component="h2">
                             {crypto.name}
                         </Typography>
-                         <CardMedia component="img" height="4" image={crypto.iconUrl} alt={crypto.name } 
-      />
+                         <CardMedia  image={crypto.iconUrl} alt={crypto.name } className="w-6 h-6 flex" />
                         <Typography variant="body2" component="p">
                             {crypto.symbol}
                         </Typography>
